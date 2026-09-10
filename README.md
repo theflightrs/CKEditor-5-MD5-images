@@ -15,58 +15,34 @@ Installation
 
 Documentation
 -------------
-<!--
-Link to the repository's wiki if more documentation can be found there. Remove
-this section if not needed (and consider disabling the wiki in the repo settings
-if not used).
--->
 
 Additional documentation is located in the wiki:
-https://github.com/backdrop-contrib/ckeditor_5_md5_images/wiki
+https://github.com/theflightrs/CKEditor-5-MD5-images/wiki
 
 
 Issues
 ------
-<!--
-Link to the repo's issue queue (make sure it's enabled in the repo settings).
--->
+
 
 Bugs and feature requests should be reported in the issue queue:
-https://github.com/backdrop-contrib/ckeditor_5_md5_images/issues
+https://github.com/theflightrs/CKEditor-5-MD5-images/issues
 
 
 Current Maintainers
 -------------------
-<!--
-List the current maintainer(s) and note if new/additional maintainers are
-needed.
--->
 
 - [RS Snyder](https://github.com/theflightrs)
 
 
 Credits
 -------
-<!--
-Give credit where credit's due.
-If this is a Drupal port, state who ported it and who wrote the original Drupal
-module. If this module is based on another project, or uses third-party
-libraries, list them here. You can also mention any organisations/companies who
-sponsored the module's development.
--->
 
-- Written for Backdrop CMS by [Your Name](https://github.com/username).
-- Ported to Backdrop CMS by [Your Name](https://github.com/username).
-- Originally written for Drupal by [Someone Else](https://github.com/username).
-- Based on [Another Project](https://github.com/example/project).
-- Sponsored by [Organization](https://example.org).
+- Written for Backdrop CMS by [RS Snyder]([https://github.com/username](https://github.com/theflightrs)).
+
 
 
 License
 -------
-<!--
-Mention what license this is released under, and where people can find it.
--->
 
 This project is GPL v2 software. See the LICENSE.txt file in this directory for
 the complete text.
