@@ -1,0 +1,45 @@
+<?php
+/**
+ * @file
+ * Names inline images uploaded through the editor with an MD5 hash.
+ */
+
+
+/**
+ * Implements hook_file_presave().
+ */
+function ckeditor_5_md5_images_file_presave(File $file) {
+  // Only rename newly created files (is_new flag is set or ID is empty)
+  if (!empty($file->is_new) || empty($file->fid)) {
+    
+    // Get file extension
+    $pathinfo = pathinfo($file->filename);
+    $extension = !empty($pathinfo['extension']) ? '.' . $pathinfo['extension'] : '';
+
+    // Choose how to generate the hash:
+    // Option A: Hash of original filename + timestamp (guarantees uniqueness)
+    $hash = md5($pathinfo['filename'] . time() . uniqid());
+
+    // Option B: MD5 hash of actual file contents (great for deduplication)
+    // $hash = md5_file($file->uri);
+
+    $new_filename = $hash . $extension;
+
+    // Build the new target URI in the same scheme directory (e.g., public://)
+    $scheme = file_uri_scheme($file->uri);
+    $directory = file_uri_target($file->uri);
+    $directory_path = dirname($directory);
+
+    if ($directory_path === '.') {
+      $new_uri = $scheme . '://' . $new_filename;
+    } else {
+      $new_uri = $scheme . '://' . $directory_path . '/' . $new_filename;
+    }
+
+    // Move file on disk and update file entity properties
+    if (file_unmanaged_move($file->uri, $new_uri, FILE_EXISTS_RENAME)) {
+      $file->uri = $new_uri;
+      $file->filename = $new_filename;
+    }
+  }
+}

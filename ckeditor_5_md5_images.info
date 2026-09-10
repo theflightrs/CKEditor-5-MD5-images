@@ -1,0 +1,8 @@
+; Generated with Backdrop's 'Add-on Generator' module.
+type = module
+backdrop = 1.x
+name = CKEditor 5 MD5 images
+description = Names inline images uploaded through the editor with an MD5 hash.
+maintainers[theflightrs] = RS Snyder
+tags[] = Editors
+tags[] = Images
